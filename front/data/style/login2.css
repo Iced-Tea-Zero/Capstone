@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Do+Hyeon&family=Dongle&family=Gothic+A1&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR&family=Stylish&family=Sunflower:wght@500&display=swap");
+
+#text1 {
+  /* text-align: center;         */
+  /* position: absolute; */
+  /* width: 451px; */
+  height: 50px;
+  font-family: "Jua", sans-serif;
+
+  /* font-family: 'arial', 'bold';    */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #35547c;
+}
+
+#text2 {
+  /* position: absolute; */
+  /* width: 466px; */
+  height: 77px;
+  /* left: 487px; */
+  /* top: 550px; */
+
+  font-family: "Jua", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #4383d5;
+}
+
+#line {
+  line-height: 45px;
+}
+
+#button {
+  line-height: 30px;
+}
