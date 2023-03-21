@@ -105,8 +105,8 @@ thead {
   display: block;
   width: 240px;
   margin: 0 auto;
-  position: sticky;
-  top: 50px;
+  position: fixed;
+  top: 150px;
 }
 
 .searched {

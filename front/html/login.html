@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
+
    <meta charset = "UTF-8">
    <title>tool tools</title>
     <meta name ="google-signin-client_id" content="305154557254-gea4ckhdmp8lnj7q8rdsg6kusfbjjedp.apps.googleusercontent.com">
-   <link rel = "stylesheet" href = "/data/style/login2.css" type = "text/css"></link>
+   <link rel = "stylesheet" href = "../data/style/login.css" type = "text/css"></link>
 </head>
 <body>
     <style>
@@ -13,32 +13,32 @@
             text-align: center;
         }
     </style>
-   
+
       <div>
         <br><br><br>
-      <img  src="/data/img/tool.png" width = "200" height = "200">
+      <img  src="../data/img/tool.png" width = "200" height = "200">
       <p id = "text1">&nbsp;툴들을 한번에
       <br>&nbsp;간편하고 쉽게, 툴툴 ! </p>
-      <p id = "text2"> <br>&nbsp;지금 로그인해서 보다 더 
+      <p id = "text2"> <br>&nbsp;지금 로그인해서 보다 더
       <br>&nbsp;간편하게 툴툴을 사용해보세요.
         <br>&nbsp;툴툴은 언제나 당신을 환영합니다.</p>
-        
-        
-        <img src ="/data/img/line.png"width = "400" >
-        <br> 
- 
 
-        <p id = "button"> 
-         
-            <img src ="/data/img/kakao.png" onclick = "kakaoLogin();" width = "500" height = "75">
-      
+
+        <img src ="../data/img/line.png"width = "400" >
+        <br>
+
+
+        <p id = "button">
+
+            <img src ="../data/img/kakao.png" onclick = "kakaoLogin();" width = "500" height = "75">
+
         </p>
                 <!-- 카카오 스크립트 -->
    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
    <script>
       Kakao.init('019cd36fcee2ee64a5bb70b7a4bcd090'); //발급받은 키 중 javascript키를 사용해준다.
       console.log(Kakao.isInitialized()); // sdk초기화여부판단
-      
+
       //카카오로그인
       function kakaoLogin() {
        Kakao.Auth.login({
@@ -59,16 +59,16 @@
        })
      }
    </script>
-  
-        
+
+
 <!-- ////////////////////////////////////////////////////////// -->
 
-        
-   
+
+
 
     <p id="GgCustomLogin">
      <a href="javascript:void(0)">
-         <img src = "/data/img/google.png" onclick = " onSignIn();" width = "500" height = "75"></a>
+         <img src = "../data/img/google.png" onclick = " onSignIn();" width = "500" height = "75"></a>
      </a>
     </p>
 
@@ -107,11 +107,11 @@
          console.log(e);
       })
    }
-   function onSignInFailure(t){      
+   function onSignInFailure(t){
       console.log(t);
    }
    </script>
-   
+
    <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
       <br>
