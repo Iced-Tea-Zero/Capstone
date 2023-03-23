@@ -29,6 +29,28 @@
   height: 30px;
 }
 
+.login {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+.login:link {
+  color: pink;
+  text-decoration: none;
+}
+.login:visited {
+  color: black;
+  text-decoration: none;
+}
+.login:hover {
+  color: red;
+  text-decoration: underline;
+}
+.login:active {
+  color: green;
+  text-decoration: none;
+}
 body {
   text-align: center;
   padding: 0;
