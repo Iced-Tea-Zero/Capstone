@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
     <link href="../data/style/detail.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/detail.js"></script>
   </head>
   <body>
     <div class="header">
@@ -51,7 +57,16 @@
               <tr>
                 <td>
                   <a href="#">https://www.google.com/intl/ko_KR/docs/about/</a>
-                  <br />
+                  <img
+                    id="img1"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <img
+                    id="img2"
+                    src="../data/img/star2.png"
+                    style="width: 20px; vertical-align: top"
+                  />
                 </td>
               </tr>
 
@@ -151,10 +166,20 @@
             <tbody>
               <tr>
                 <td>
-                  <a href="#" class="list-item">
-                    <span class="item-name">Google Docs <br /></span
-                  ></a>
-                  <a href="#">https://www.google.com/intl/ko_KR/docs/about/</a>
+                  <a href="./detail.html" class="list-item">
+                    <span class="item-name">Google Docs </span></a
+                  >
+
+                  <br />
+                  <a href="https://www.google.com/intl/ko_KR/docs/about/"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic1"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+
                   <br />
                   <span class="imsi-button1">
                     <label>
@@ -191,9 +216,18 @@
               <tr>
                 <td>
                   <a href="#" class="list-item"
-                    ><span class="item-name"> TOOL B<br /></span
+                    ><span class="item-name"> 한글 2017<br /></span
                   ></a>
-                  <a href="#">https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com</a>
+                  <a
+                    href="https://www.hancom.com/cs_center/csDownload.do?div=02"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic2"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+
                   <br />
                   <span class="imsi-button1">
                     <label>
@@ -224,9 +258,17 @@
               <tr>
                 <td>
                   <a href="#" class="list-item">
-                    <span class="item-name">TOOL C <br /></span
+                    <span class="item-name">Word <br /></span
                   ></a>
-                  <a href="#">https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com</a>
+                  <a
+                    href="https://www.microsoft.com/ko-kr/microsoft-365/word?activetab=tabs%3afaqheaderregion3"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic3"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
                   <br />
                   <span class="imsi-button1">
                     <label>
@@ -257,9 +299,16 @@
               <tr>
                 <td>
                   <a href="#" class="list-item">
-                    <span class="item-name"> TOOL D <br /></span
+                    <span class="item-name"> Polaris Office <br /></span
                   ></a>
-                  <a href="#">https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com</a>
+                  <a href="https://www.polarisoffice.com/ko/"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic4"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
                   <br />
                   <span class="imsi-button1">
                     <label>
@@ -281,6 +330,237 @@
                   </span>
                 </td>
               </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> Notion <br /></span
+                  ></a>
+                  <a
+                    href="https://www.notion.so/ko-kr/product?utm_source=google&utm_campaign=10805039169&utm_medium=104440699897&utm_content=455555244437&utm_term=notion&targetid=aud-1188813422817:kwd-312974742&gclid=Cj0KCQjw8e-gBhD0ARIsAJiDsaVDpOQcC94o7veAOph7TGiGb0ipQRKODiHcp0iXNos-5QrTBp6dQ-MaApgmEALw_wcB"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic5"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                  <span class="imsi-button4">
+                    <label>
+                      <input type="checkbox" name="hash" value="OOO" />
+                      OOO
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> Excel <br /></span
+                  ></a>
+                  <a href="https://www.microsoft.com/ko-kr/microsoft-365/excel"
+                    >사이트로 넘어가기</a
+                  >
+                  <img
+                    id="pic6"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                  <span class="imsi-button4">
+                    <label>
+                      <input type="checkbox" name="hash" value="OOO" />
+                      OOO
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL F <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic7"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                  <span class="imsi-button4">
+                    <label>
+                      <input type="checkbox" name="hash" value="OOO" />
+                      OOO
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL E <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic8"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL E <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic9"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL E <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic10"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL E <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic11"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="#" class="list-item">
+                    <span class="item-name"> TOOL E <br /></span
+                  ></a>
+                  <a href="#">사이트로 넘어가기</a>
+                  <img
+                    id="pic12"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <br />
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" value="문서저장" />
+                      문서저장
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" value="대화창" />
+                      대화창
+                    </label>
+                  </span>
+                </td>
+              </tr>
             </tbody>
             <tfoot>
               <tr>
@@ -288,7 +568,12 @@
                   <a href="#" class="list-item">
                     <span class="item-name"> TOOL E <br /></span
                   ></a>
-                  <a href="#">https://www.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com</a>
+                  <a href="#">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                  <img
+                    id="pic13"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
                   <br />
                   <span class="imsi-button1">
                     <label>
