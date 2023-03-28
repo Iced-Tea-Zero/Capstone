@@ -39,3 +39,31 @@ driver.close()
 # 4. youtube나 뉴스로 적혀있으면 걸려야 함
 # 5. 무료 / 공유 가능을 웹크롤링으로 만들 수 있음 (boolean 형식 T/F로!!)
 # 6. DB에 저장
+#
+# import requests
+# from bs4 import BeautifulSoup
+#
+# query = "디자인 제작 툴"
+# url = f"https://www.google.com/search?q={query}"
+#
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"}
+#
+# response = requests.get(url, headers=headers)
+# soup = BeautifulSoup(response.content, "html.parser")
+#
+# results = []
+# for g in soup.find_all('div', class_='r'):
+#     anchors = g.find_all('a')
+#     if anchors:
+#         link = anchors[0]['href']
+#         title = g.find('h3').text
+#         description = g.find(class_='s').text
+#         item = {
+#             "title": title,
+#             "link": link,
+#             "description": description
+#         }
+#         results.append(item)
+#
+# print(results)
