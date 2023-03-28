@@ -1,37 +1,66 @@
-from urllib.parse import quote_plus
-from urllib.parse import quote_plus
-from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
 
-baseUrl = 'https://www.google.com/search?q='
-plusUrl = input('검색어를 입력하세요: ') # 이 부분은 우리가 키워드를 저장하는 식으로 바꾸는 게 나을 듯
-url = baseUrl + quote_plus(plusUrl)
+# 크롬 드라이버 실행
+driver = webdriver.Chrome('/path/to/chromedriver')
 
-# chromedriver path input
-driver = webdriver.Chrome('C:\chromedriver_win32\chromedriver')
-driver.get(url)
-driver.implicitly_wait(10)
+# 검색어
+search_query = '디자인 제작 툴'
 
-html = driver.page_source
-soup = BeautifulSoup(html)
+for page in range(1, 13):
+    # 구글 검색 페이지 열기
+    url = f'https://www.google.com/search?q={search_query}&start={(page-1)*10}'
+    driver.get(url)
+    time.sleep(10)
 
-v = soup.select('.yuRUbf')
-w = soup.select('.VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf')
+    # 검색 결과 추출
+    results = driver.find_elements(By.CSS_SELECTOR, 'div.g')
 
-for i in v:
-    print(i.select_one('.LC20lb.DKV0Md').text) # 사이트 제목
-    print(i.a.attrs['href']) # 사이트 링크
-print()
+    for result in results:
+        link = result.find_element(By.TAG_NAME, 'a').get_attribute('href')
+        title = result.find_element(By.CSS_SELECTOR, 'h3').text
+        print(title, link)
+        # desc = result.find_element(By.CLASS_NAME, 'Z26q7c UK95Uc').text
+        # print(title, link, desc)
 
-for j in w:
-    print(j.span.text) # 사이트 정보
-    print(j.em.text)
-print()
+# 브라우저 종료
+time.sleep(10)
+driver.quit()
 
-print('done')
-
-driver.close()
-
+# from urllib.parse import quote_plus
+# from bs4 import BeautifulSoup
+# from selenium import webdriver
+#
+# baseUrl = 'https://www.google.com/search?q='
+# plusUrl = input('검색어를 입력하세요: ') # 이 부분은 우리가 키워드를 저장하는 식으로 바꾸는 게 나을 듯
+# url = baseUrl + quote_plus(plusUrl)
+#
+# # chromedriver path input
+# driver = webdriver.Chrome('C:\chromedriver_win32\chromedriver')
+# driver.get(url)
+# driver.implicitly_wait(10)
+#
+# html = driver.page_source
+# soup = BeautifulSoup(html)
+#
+# v = soup.select('.yuRUbf')
+# w = soup.select('.VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf')
+#
+# for i in v:
+#     print(i.select_one('.LC20lb.DKV0Md').text) # 사이트 제목
+#     print(i.a.attrs['href']) # 사이트 링크
+# print()
+#
+# for j in w:
+#     print(j.span.text) # 사이트 정보
+#     print(j.em.text)
+# print()
+#
+# print('done')
+#
+# driver.close()
+#
 
 # 1. span 값이 이상함
 # 2. 첫 페이지만 끌고 옴 -> 모든 페이지를 다 보고 싶어서...
