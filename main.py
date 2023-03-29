@@ -23,7 +23,7 @@ for page in range(1, 3):
         title = result.find_element(By.CSS_SELECTOR, 'h3').text
         # 사이트 링크
         link = result.find_element(By.TAG_NAME, 'a').get_attribute('href')
-        # 사이트 설명 (만약 태그가 없을 경우, 예외처리하고 넘어가도록 구현)
+        # 사이트 설명 (날짜 형식을 없앰/만약 태그가 없을 경우, 예외처리하고 넘어가도록 구현)
         try:
             desc = result.find_element(By.CLASS_NAME, 'VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf').text
             new_desc = ''.join([i for i in desc if not i.isdigit() or i == ""])
