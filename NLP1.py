@@ -1,3 +1,4 @@
+# 사이트 설명 -> 파일
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
