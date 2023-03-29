@@ -9,7 +9,7 @@ driver = webdriver.Chrome('/path/to/chromedriver')
 # 검색어
 search_query = '디자인 제작 툴'
 
-for page in range(1, 11):
+for page in range(1, 3):
     # 구글 검색 페이지 열기
     url = f'https://www.google.com/search?q={search_query}&start={(page-1)*10}'
     driver.get(url)
@@ -26,11 +26,12 @@ for page in range(1, 11):
         # 사이트 설명 (만약 태그가 없을 경우, 예외처리하고 넘어가도록 구현)
         try:
             desc = result.find_element(By.CLASS_NAME, 'VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf').text
+            new_desc = ''.join([i for i in desc if not i.isdigit() or i == ""])
         except NoSuchElementException: 
             print("Element not found.")
 
         # 전체 출력
-        print(" ", title, link, desc, sep='\n')
+        print(" ", title, link, new_desc, sep='\n')
 
 # 브라우저 종료
 time.sleep(10)
