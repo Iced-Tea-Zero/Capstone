@@ -35,6 +35,11 @@
   right: 50px;
 }
 
+.login:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
 body {
   text-align: center;
   padding: 0;
