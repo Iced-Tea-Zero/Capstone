@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 * {
-  font-family: "Do Hyeon", sans-serif;
+  font-family: "Jua", sans-serif;
 }
 
 .header {
@@ -32,6 +34,11 @@
   position: absolute;
   top: 10px;
   right: 50px;
+}
+
+.login:hover {
+  color: yellow;
+  text-decoration: underline;
 }
 
 body {
