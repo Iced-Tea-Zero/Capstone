@@ -1,0 +1,46 @@
+.button {
+  display: block;
+  position: relative;
+  float: left;
+  width: 120px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #FFF;
+  border-radius: 5px;
+  transition: all 0.2s ;
+}
+
+.btnLightBlue {
+  background: #235BA3;
+}
+
+.btnFade.btnLightBlue:hover {
+  background: #254772;
+}
+
+/* .box {
+  width: 200px;
+  height: 100px;
+  background-color: #eee;
+  padding: 10px;
+  border: 1px solid #999;
+  position: relative;
+} */
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.button:hover .close {
+  opacity: 1;
+}
