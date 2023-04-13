@@ -4,6 +4,11 @@ from selenium.common.exceptions import NoSuchElementException
 from pymongo import MongoClient
 import time
 
+# MongoDB 연결
+client = MongoClient()
+db = client['sitedb']
+collection = db['sitecol']
+
 # 크롬 드라이버 실행
 driver = webdriver.Chrome('/path/to/chromedriver')
 
@@ -54,6 +59,14 @@ for page in range(1, 13):
 
         # 전체 출력
         print(" ", title, link, new_desc, sep='\n')
+
+        data = {
+            'title': title,
+            'link': link
+        }
+        collection.insert_one(data)
+
+client = MongoClient(host='localhost', port=27017)
 
 # 브라우저 종료
 time.sleep(10)
