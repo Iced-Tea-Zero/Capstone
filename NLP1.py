@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 import time
-import pandas as pd
 
 # 크롬 드라이버 실행
 driver = webdriver.Chrome('/path/to/chromedriver')
@@ -30,6 +29,9 @@ for page in range(1, 13):
         try:
             desc = result.find_element(By.CLASS_NAME, 'VwiC3b.yXK7lf.MUxGbd.yDYNvb.lyLwlc.lEBKkf').text
             new_desc = ''.join([i for i in desc if not i.isdigit() or i == ""])
+            new_desc = new_desc.replace(".", "")
+            new_desc = new_desc.replace("—", "")
+            new_desc = new_desc.replace("·", "")
         except NoSuchElementException:
             new_desc = "Element not found."
 
