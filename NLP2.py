@@ -1,12 +1,27 @@
 # 파일 -> NLP
 
-from khaiii import KhaiiiApi
-import pandas as pd
+import khaiii
+import khaiii
 
-api = KhaiiiApi()
+# khaiii 분석기 생성
+khaiii_inst = khaiii.KhaiiiApi()
 
-for w in api.analyze("안녕하세요. khaiii를 사용해봅시다."):
-    print(w)
+# 분석할 텍스트 입력
+text = "한글 텍스트를 형태소 분석하는 예시입니다."
+
+# 형태소 분석
+khaiii_inst.analyze(text)
+
+# 분석 결과 출력
+for word in khaiii_inst:
+    print(word)
+
+
+
+
+
+
+
 
 
 # list1 = []
@@ -17,4 +32,4 @@ for w in api.analyze("안녕하세요. khaiii를 사용해봅시다."):
 # list1 = [s.replace('.', '').replace('—', '').replace('·', '').replace('/', '').replace(':', '') for s in map(str, my_list)]
 #
 # for item in list1:
-#     print(item)
+#     print(item)c
