@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from pymongo import MongoClient
 import time
 
 # 크롬 드라이버 실행
