@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel = "stylesheet" href = "click.css" type = "text/css"></link>
-    </head>
-    <body>
-        <div class="container" class id = "button-container">
-            <a class = "button btnFade btnLightBlue" href= "#"  button id = "show-btn" ># 다이어그램  </a>
-    </body>
+  <head>
+    <title>Tool Tools</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="click.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container" id="button-container">
+      <a class="button btnFade btnLightBlue" href="#" id="show-btn"> </a>
+    </div>
+
     <script>
-      // 버튼 클릭 이벤트 함수
-        function showNewButton() {
-        const newBtn = document.createElement('button');
-        newBtn.textContent = '# 다이어그램';
-        newBtn.classList.add('button', 'btnLightBlue', 'btnFade');
+      function showNewButton() {
+        const newBtn = document.createElement("button");
+        newBtn.textContent = document.getElementById("show-btn").textContent; // 첫 번째 버튼의 텍스트를 새 버튼에 할당
+        newBtn.classList.add("button", "btnLightBlue", "btnFade");
 
-        const closeBtn = document.createElement('span');
-        closeBtn.textContent = '×';
-        closeBtn.classList.add('close');
-         newBtn.appendChild(closeBtn);
-        newBtn.addEventListener('click', function() {
-        this.remove(); // 클릭된 버튼을 삭제
+        const closeBtn = document.createElement("span");
+        closeBtn.textContent = "×";
+        closeBtn.classList.add("close");
+        newBtn.appendChild(closeBtn);
+        newBtn.addEventListener("click", function () {
+          this.remove();
+          document.getElementById("show-btn").addEventListener("click", showNewButton);
         });
-  
-        document.getElementById('button-container').appendChild(newBtn);
-        }
 
-        document.getElementById('show-btn').addEventListener('click', showNewButton);
-  
-          </script>
+        document.getElementById("button-container").appendChild(newBtn);
+        document.getElementById("show-btn").removeEventListener("click", showNewButton);
+      }
+
+      document.getElementById("show-btn").addEventListener("click", showNewButton);
+    </script>
+  </body>
 </html>
-
