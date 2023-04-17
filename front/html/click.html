@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Tool Tools</title>
-    <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="click.css" type="text/css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="../data/style/click.css" type="text/css" />
   </head>
   <body>
     <div class="container" id="button-container">
@@ -22,14 +22,20 @@
         newBtn.appendChild(closeBtn);
         newBtn.addEventListener("click", function () {
           this.remove();
-          document.getElementById("show-btn").addEventListener("click", showNewButton);
+          document
+            .getElementById("show-btn")
+            .addEventListener("click", showNewButton);
         });
 
         document.getElementById("button-container").appendChild(newBtn);
-        document.getElementById("show-btn").removeEventListener("click", showNewButton);
+        document
+          .getElementById("show-btn")
+          .removeEventListener("click", showNewButton);
       }
 
-      document.getElementById("show-btn").addEventListener("click", showNewButton);
+      document
+        .getElementById("show-btn")
+        .addEventListener("click", showNewButton);
     </script>
   </body>
 </html>

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
     <link href="../data/style/select.css" rel="stylesheet" />
+    <link href="../data/style/click.css" rel="stylesheet" />
+    <script src="../js/click.js"></script>
   </head>
   <body>
     <div class="header">
@@ -39,41 +41,45 @@
     </div>
     <div class="imsi-sub-frame">
       <div class="pick">
-        <span class="imsi-button1">
-          <label>
-            <input type="checkbox" name="hash" value="문서저장" />
-            문서저장
-          </label>
-        </span>
-        <span class="imsi-button1">
-          <label>
-            <input type="checkbox" name="hash" value="발표자료" />
-            발표자료
-          </label>
-        </span>
-        <span class="imsi-button2">
-          <label>
-            <input type="checkbox" name="hash" value="대화창" />
-            대화창
-          </label>
-        </span>
-        <span class="imsi-button3">
-          <label>
-            <input type="checkbox" name="hash" value="홍보물 제작" />
-            홍보물 제작
-          </label>
-        </span>
-        <span class="imsi-button4">
-          <label>
-            <input type="checkbox" name="hash" value="OOO" />
-            OOO
-          </label>
-        </span>
-        <span class="imsi-button6">
-          <a href="./list.html">
-            <input type="submit" name="submit" value="GO" id="go" />
-          </a>
-        </span>
+        <div id="pick">
+          <!-- <span class="imsi-button1">
+            <label>
+              <input type="checkbox" name="hash" value="문서저장" />
+              문서저장
+            </label>
+          </span>
+          <span class="imsi-button1">
+            <label>
+              <input type="checkbox" name="hash" value="발표자료" />
+              발표자료
+            </label>
+          </span>
+          <span class="imsi-button2">
+            <label>
+              <input type="checkbox" name="hash" value="대화창" />
+              대화창
+            </label>
+          </span>
+          <span class="imsi-button3">
+            <label>
+              <input type="checkbox" name="hash" value="홍보물 제작" />
+              홍보물 제작
+            </label>
+          </span>
+          <span class="imsi-button4">
+            <label>
+              <input type="checkbox" name="hash" value="OOO" />
+              OOO
+            </label>
+          </span> -->
+        </div>
+        <div>
+          <span class="imsi-button6">
+            <a href="../html/list.html">
+              <input type="submit" name="submit" value="GO" id="go" />
+            </a>
+          </span>
+        </div>
       </div>
       <form>
         <input
@@ -93,7 +99,13 @@
           <div>
             <span class="imsi-button1">
               <label>
-                <input type="checkbox" name="hash" value="문서저장" />
+                <input
+                  type="checkbox"
+                  button
+                  id="show-btn"
+                  name="hash"
+                  value="문서저장"
+                />
                 문서저장
               </label>
             </span>

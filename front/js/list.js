@@ -156,3 +156,13 @@ $(function () {
     }
   });
 });
+
+// 순위나열 데이터 들어오면 내림차순으로 정렬
+// const arr = [2, 1, 3, 10];
+
+// arr.sort(function (a, b) {
+//   if (a > b) return 1;
+//   if (a === b) return 0;
+//   if (a < b) return -1;
+// });
+// document.writeln(arr + "<br>"); // [1, 2, 3, 10]
