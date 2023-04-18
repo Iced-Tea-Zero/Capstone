@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
     <link href="../data/style/list.css" rel="stylesheet" />
-
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
@@ -92,13 +91,30 @@
             <tbody>
               <tr>
                 <td>
-                  <a href="./detail.html" class="list-item">
-                    <span class="item-name">Google Docs </span></a
+                  <a id="title" href="./detail.html" class="list-item">
+                    <span class="item-name">
+                      <script>
+                        $.getJSON("../data/test.json", function (data) {
+                          for (let i = 0; i < data.length; i++) {
+                            document.getElementsById("title").innerHTML =
+                              data[0].title;
+                          }
+                        });
+                      </script></span
+                    ></a
                   >
 
                   <br />
-                  <a href="https://www.google.com/intl/ko_KR/docs/about/"
-                    >사이트로 넘어가기</a
+                  <a id="link" href="data[key].link"
+                    ><script>
+                      $.getJSON("../data/test.json", function (data) {
+                        for (key in data) {
+                          document.getElementById("link").innerHTML =
+                            data[key].link;
+                          document.getElementById("link").href = data[key].link;
+                        }
+                      });
+                    </script></a
                   >
                   <img
                     id="pic1"
