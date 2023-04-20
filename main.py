@@ -68,7 +68,7 @@ for x in search_query:
                     or 'linkedin' in link or 'markany' in link or 'shop' in link or 'abakangaroo' in link \
                     or 'linkareer' in link or 'lotteworld' in link or 'oilsteb' in link or 'facebook' in link.lower() \
                     or 'videocoach' in link or 'sciencelove' in link  or 'ndolson' in link or 'ditoday' in link\
-                    or 'besuccess' in link or 'apple.com' in link or 'segye' in link \
+                    or 'besuccess' in link or 'apple.com' in link or 'segye' in link or 'playnexacro' in link\
                     or 'instagram' in link or 'ciokorea' in link or 'dprime' in link :
                 continue
 
