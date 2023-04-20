@@ -45,7 +45,7 @@ for x in search_query:
 
             if 'top' in title.lower() or 'best' in title.lower() or '가지' in title or '베스트' in title \
                     or '사용법' in title or 'tip' in title.lower() or '가이드' in title or '고객센터' in title\
-                    or '비슷한' in title or '비교' in title or '추천' in title or '소개' in title \
+                    or '비슷한' in title or '비교' in title or '추천' in title or '소개' in title or 'tiktok' in title.lower()\
                     or 'yes24' in title.lower() or '브런치' in title or '잡플래닛' in title or '자소설닷컴' in title \
                     or '씨넷코리아' in title or '예스폼' in title or '닥터주부' in title or 'google play' in title.lower() \
                     or '기사' in title or '뉴스' in title or '블로그' in title or 'ybm' in title.lower()\
