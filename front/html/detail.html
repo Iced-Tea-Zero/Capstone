@@ -56,7 +56,7 @@
                       $.getJSON("../data/test.json", function (data) {
                         for (let i = 0; i < data.length; i++) {
                           document.getElementById("title0").innerHTML =
-                            data[0].title;
+                            data[1].title;
                         }
                       });
                     </script>
@@ -79,8 +79,8 @@
                       $.getJSON("../data/test.json", function (data) {
                         for (key in data) {
                           document.getElementById("link0").innerHTML =
-                            data[0].link;
-                          document.getElementById("link0").href = data[0].link;
+                            data[1].link;
+                          document.getElementById("link0").href = data[1].link;
                         }
                       });
                     </script>
@@ -134,15 +134,16 @@
               </tr>
               <tr>
                 <td>
-                  <textarea id="" style="width: 680px; height: 300px">
-                    간편하게 공유하여 실시간으로 함께 수정하고 댓글, 추천, 작업 항목을 사용하여 작업을 진행해 나가세요. 또는 @-멘션을 사용하여 관련 사용자, 파일, 이벤트를 온라인 Docs로 가져와 다양한 공동작업을 수행할 수 있습니다.
-                    스마트 편지쓰기와 같은 보조 기능을 사용하면 오류를 줄이고 작업 시간을 단축할 수 있으므로 아이디어에 집중할 수 있습니다. 맞춤법 및 문법 제안, 음성 입력, 빠른 문서 번역 기능을 통해 시간을 절약할 수 있습니다.
-                    Docs는 사용자가 애용하는 다른 Google 앱과 섬세하게 통합되므로 시간을 절약할 수 있습니다. Gmail에서 바로 댓글에 답장하고 Google Sheets 차트를 삽입하며 Google Meet을 통해 쉽게 공유할 수 있습니다. Docs에서 웹 및 Google Drive에 있는 관련 콘텐츠와 이미지를 바로 검색할 수도 있습니다.
-                    Microsoft Word 파일을 변환할 필요 없이 온라인으로 쉽게 편집하고 작업 항목, 스마트 편지쓰기와 같은 Docs의 개선된 공동작업 및 보조 기능을 활용할 수 있습니다. PDF 파일을 가져와 즉시 편집할 수도 있습니다.
-
-
-</textarea
-                  >
+                  <textarea id="detail0" style="width: 680px; height: 300px">
+                  </textarea>
+                  <script>
+                    $.getJSON("../data/test.json", function (data) {
+                      for (key in data) {
+                        document.getElementById("detail0").innerHTML =
+                          data[1].detail;
+                      }
+                    });
+                  </script>
                 </td>
               </tr>
               <tr>

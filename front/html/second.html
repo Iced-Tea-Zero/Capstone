@@ -1,0 +1,9 @@
+<!-- second.html -->
+<p id="value-display"></p>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var myValue = localStorage.getItem("myValue");
+    document.getElementById("value-display").textContent = myValue;
+  });
+</script>
