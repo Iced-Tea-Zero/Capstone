@@ -29,14 +29,31 @@ with open('hashtags.txt', 'r', encoding="utf-8") as f:
     lines = f.readlines()
     hashtags_list = [line.strip() for line in lines]
 
-print(title_list)
+rank_list = []
+def str_to_num(string):
+    if string[-1] == 'B':
+        return float(string[:-1]) * 1e9
+    elif string[-1] == 'M':
+        return float(string[:-1]) * 1e6
+    elif string[-1] == 'K':
+        return float(string[:-1]) * 1e3
+    else:
+        return float(string)
+
+for num_str in number_list:
+    num = int(str_to_num(num_str))
+    rank_list.append(num)
+
+zipped_lists = zip(rank_list, title_list, link_list, detail_list, hashtags_list)
+sorted_lists = sorted(zipped_lists, reverse=True)
+rank_list, title_list, link_list, detail_list, hashtag_list = zip(*sorted_lists)
 
 # 데이터 추가-> for 문 추가하기
 for i in range(len(title_list)):
     title = title_list[i]
     link = link_list[i]
     detail = detail_list[i]
-    number = number_list[i]
+    number = rank_list[i]
     hashtag = hashtags_list[i]
 
     data = {
