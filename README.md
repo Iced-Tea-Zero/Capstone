@@ -3,7 +3,7 @@
   
   <br><br>
   
-  <p> Tech Stack </p>
+  <p> Session 4-4 </p>
   
   <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=Python&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/>
