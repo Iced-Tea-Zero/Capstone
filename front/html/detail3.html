@@ -56,7 +56,7 @@
                       $.getJSON("../data/test.json", function (data) {
                         for (let i = 0; i < data.length; i++) {
                           document.getElementById("title0").innerHTML =
-                            data[0].title;
+                            data[3].title;
                         }
                       });
                     </script>
@@ -79,8 +79,8 @@
                       $.getJSON("../data/test.json", function (data) {
                         for (key in data) {
                           document.getElementById("link0").innerHTML =
-                            data[0].link;
-                          document.getElementById("link0").href = data[0].link;
+                            data[3].link;
+                          document.getElementById("link0").href = data[3].link;
                         }
                       });
                     </script>
@@ -103,31 +103,13 @@
                   <span class="imsi-button1">
                     <label>
                       <input type="checkbox" name="hash" />
-                      문서
+                      프로젝트
                     </label>
                   </span>
                   <span class="imsi-button2">
                     <label>
                       <input type="checkbox" name="hash" />
-                      제작
-                    </label>
-                  </span>
-                  <span class="imsi-button3">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      협업
-                    </label>
-                  </span>
-                  <span class="imsi-button4">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      공유
-                    </label>
-                  </span>
-                  <span class="imsi-button4">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      온라인
+                      작성
                     </label>
                   </span>
                 </td>
@@ -140,7 +122,7 @@
                     $.getJSON("../data/test.json", function (data) {
                       for (key in data) {
                         document.getElementById("detail0").innerHTML =
-                          data[0].detail;
+                          data[3].detail;
                       }
                     });
                   </script>
@@ -181,31 +163,13 @@
                   <span class="imsi-button1">
                     <label>
                       <input type="checkbox" name="hash" />
-                      문서
+                      프로젝트
                     </label>
                   </span>
                   <span class="imsi-button2">
                     <label>
                       <input type="checkbox" name="hash" />
-                      제작
-                    </label>
-                  </span>
-                  <span class="imsi-button3">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      협업
-                    </label>
-                  </span>
-                  <span class="imsi-button4">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      공유
-                    </label>
-                  </span>
-                  <span class="imsi-button4">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      온라인
+                      작성
                     </label>
                   </span>
                 </th>

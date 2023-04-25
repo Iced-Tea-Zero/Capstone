@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
     <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="select.css" type="text/css" />
+    <link rel="stylesheet" href="../data/style/select2.css" type="text/css" />
   </head>
   <body>
     <div class="header">
@@ -62,7 +62,7 @@
       </form>
       <div class="imsi-left">
         <div class="imsi-left-content-frame">
-      
+
           <div class="container" id="button-container">
             <a class="button btnFade btnLightBlue" href="#" id="show-btn-1"> A</a>
             <a class="button btnFade btnLightBlue" href="#" id="show-btn-2"> B</a>
@@ -85,12 +85,12 @@
             <a class="button btnFade btn4Blue" href="#" id="show-btn-16"> P</a>
 
           </div>
-      
+
           <script>
             function showNewButton() {
               const buttonId = this.id;
               let buttonText = "";
-      
+
               if (buttonId === "show-btn-1") {
                 buttonText = "A";
               } else if (buttonId === "show-btn-2") {
@@ -124,11 +124,11 @@
               } else if (buttonId === "show-btn-16") {
                 buttonText = "P";
               }
-      
+
               const newBtn = document.createElement("button");
               newBtn.textContent = buttonText; // 생성한 버튼의 텍스트 설정
               newBtn.classList.add("button", "btnLightBlue", "btnFade");
-            
+
               const closeBtn = document.createElement("span");
               closeBtn.textContent = "×";
               closeBtn.classList.add("close");
@@ -168,8 +168,8 @@
                 } else if (buttonId === "show-btn-16") {
                   document.getElementById("show-btn-16").addEventListener("click", showNewButton);
                 }
-              }); 
-            
+              });
+
               document.querySelector(".pick").appendChild(newBtn);
               if (buttonId === "show-btn-1") {
                 document.getElementById("show-btn-1").removeEventListener("click", showNewButton);
@@ -205,7 +205,7 @@
                 document.getElementById("show-btn-16").removeEventListener("click", showNewButton);
               }
             }
-            
+
             document.getElementById("show-btn-1").addEventListener("click", showNewButton);
             document.getElementById("show-btn-2").addEventListener("click", showNewButton);
             document.getElementById("show-btn-3").addEventListener("click", showNewButton);
@@ -222,7 +222,7 @@
             document.getElementById("show-btn-14").addEventListener("click", showNewButton);
             document.getElementById("show-btn-15").addEventListener("click", showNewButton);
             document.getElementById("show-btn-16").addEventListener("click", showNewButton);
-            
+
           </script>
         </body>
       </html>
