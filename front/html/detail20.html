@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
-    <link href="../data/style/list.css" rel="stylesheet" />
+    <link href="../data/style/detail.css" rel="stylesheet" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script src="../js/list.js"></script>
+    <script src="../js/detail.js"></script>
   </head>
   <body>
     <div class="header">
@@ -37,17 +37,134 @@
     </div>
     <div class="login">
       <a
-        href="../html/login.html"
+        href="./login.html"
         style="color: aliceblue; text-decoration-line: none"
       >
         로그인 <br
       /></a>
     </div>
+
     <div class="imsi-sub-frame">
       <div class="imsi-left">
         <div class="imsi-left-content-frame">
-          <table class="list">
-            <thead>
+          <div class="report">
+            <table class="list" style="width: 700px">
+              <thead>
+                <tr>
+                  <th id="title0">
+                    <script>
+                      $.getJSON("../data/test.json", function (data) {
+                        for (let i = 0; i < data.length; i++) {
+                          document.getElementById("title0").innerHTML =
+                            data[20].title;
+                        }
+                      });
+                    </script>
+                  </th>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  <img
+                    src="../data/img/icon.png"
+                    class=""
+                    style="width: 200px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a id="link0" href="data[key].link">
+                    <script>
+                      $.getJSON("../data/test.json", function (data) {
+                        for (key in data) {
+                          document.getElementById("link0").innerHTML =
+                            data[20].link;
+                          document.getElementById("link0").href = data[20].link;
+                        }
+                      });
+                    </script>
+                  </a>
+                  <img
+                    id="img1"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <img
+                    id="img2"
+                    src="../data/img/star2.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      협업
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      앱
+                    </label>
+                  </span>
+                  <span class="imsi-button3">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      모바일
+                    </label>
+                  </span>
+                  <span class="imsi-button4">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      제작
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea id="detail0" style="width: 680px; height: 300px">
+                  </textarea>
+                  <script>
+                    $.getJSON("../data/test.json", function (data) {
+                      for (key in data) {
+                        document.getElementById("detail0").innerHTML =
+                          data[20].detail;
+                      }
+                    });
+                  </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="../html/list.html">
+                    <img
+                      src="../data/img/back.png"
+                      style="width: 20px; vertical-align: top"
+                  /></a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="imsi-right">
+        <div class="imsi-right-content-frame">
+          <table
+            class="list"
+            style="
+              width: 380px;
+              table-layout: fixed;
+              word-break: break-all;
+              height: auto;
+            "
+          >
+            <thead id="top">
               <tr>
                 <th>
                   <a href="../html/select2.html" class="list-item">
@@ -58,31 +175,25 @@
                   <span class="imsi-button1">
                     <label>
                       <input type="checkbox" name="hash" />
-                      문서
+                      협업
                     </label>
                   </span>
                   <span class="imsi-button2">
                     <label>
                       <input type="checkbox" name="hash" />
-                      제작
+                      앱
                     </label>
                   </span>
                   <span class="imsi-button3">
                     <label>
                       <input type="checkbox" name="hash" />
-                      협업
+                      모바일
                     </label>
                   </span>
                   <span class="imsi-button4">
                     <label>
                       <input type="checkbox" name="hash" />
-                      공유
-                    </label>
-                  </span>
-                  <span class="imsi-button4">
-                    <label>
-                      <input type="checkbox" name="hash" />
-                      온라인
+                      제작
                     </label>
                   </span>
                 </th>
@@ -155,7 +266,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title1" href="./detail1.html" class="list-item">
+                  <a id="title1" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -219,7 +330,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title2" href="./detail2.html" class="list-item">
+                  <a id="title2" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -258,7 +369,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title3" href="./detail3.html" class="list-item">
+                  <a id="title3" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -303,7 +414,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title4" href="./detail4.html" class="list-item">
+                  <a id="title4" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -342,7 +453,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title5" href="./detail5.html" class="list-item">
+                  <a id="title5" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -393,7 +504,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title6" href="./detail6.html" class="list-item">
+                  <a id="title6" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -456,7 +567,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title7" href="./detail7.html" class="list-item">
+                  <a id="title7" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -495,7 +606,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title8" href="./detail8.html" class="list-item">
+                  <a id="title8" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -546,7 +657,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title9" href="./detail9.html" class="list-item">
+                  <a id="title9" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -609,7 +720,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title10" href="./detail10.html" class="list-item">
+                  <a id="title10" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -667,7 +778,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title11" href="./detail11.html" class="list-item">
+                  <a id="title11" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -707,7 +818,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title12" href="./detail12.html" class="list-item">
+                  <a id="title12" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -747,7 +858,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title13" href="./detail13.html" class="list-item">
+                  <a id="title13" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -811,7 +922,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title14" href="./detail14.html" class="list-item">
+                  <a id="title14" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -863,7 +974,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title15" href="./detail15.html" class="list-item">
+                  <a id="title15" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -915,7 +1026,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title16" href="./detail16.html" class="list-item">
+                  <a id="title16" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -961,7 +1072,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title17" href="./detail17.html" class="list-item">
+                  <a id="title17" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1001,7 +1112,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title18" href="./detail18.html" class="list-item">
+                  <a id="title18" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1041,7 +1152,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title19" href="./detail19.html" class="list-item">
+                  <a id="title19" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1105,7 +1216,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title20" href="./detail20.html" class="list-item">
+                  <a id="title20" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1163,7 +1274,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title21" href="./detail21.html" class="list-item">
+                  <a id="title21" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1203,7 +1314,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title22" href="./detail22.html" class="list-item">
+                  <a id="title22" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1255,7 +1366,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title23" href="./detail23.html" class="list-item">
+                  <a id="title23" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1319,7 +1430,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title24" href="./detail24.html" class="list-item">
+                  <a id="title24" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1383,7 +1494,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title25" href="./detail25.html" class="list-item">
+                  <a id="title25" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1429,7 +1540,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title26" href="./detail26.html" class="list-item">
+                  <a id="title26" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1475,7 +1586,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title27" href="./detail27.html" class="list-item">
+                  <a id="title27" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1521,7 +1632,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title28" href="./detail28.html" class="list-item">
+                  <a id="title28" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1561,7 +1672,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title29" href="./detail29.html" class="list-item">
+                  <a id="title29" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1619,7 +1730,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title30" href="./detail30.html" class="list-item">
+                  <a id="title30" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1671,7 +1782,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title31" href="./detail31.html" class="list-item">
+                  <a id="title31" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1729,7 +1840,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title32" href="./detail32.html" class="list-item">
+                  <a id="title32" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1775,7 +1886,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title33" href="./detail33.html" class="list-item">
+                  <a id="title33" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1827,7 +1938,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title34" href="./detail34.html" class="list-item">
+                  <a id="title34" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1885,7 +1996,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title35" href="./detail35.html" class="list-item">
+                  <a id="title35" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1937,7 +2048,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title36" href="./detail36.html" class="list-item">
+                  <a id="title36" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -1989,7 +2100,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title37" href="./detail37.html" class="list-item">
+                  <a id="title37" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2041,7 +2152,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title38" href="./detail38.html" class="list-item">
+                  <a id="title38" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2099,7 +2210,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title39" href="./detail39.html" class="list-item">
+                  <a id="title39" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2163,7 +2274,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title40" href="./detail40.html" class="list-item">
+                  <a id="title40" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2227,7 +2338,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title41" href="./detail41.html" class="list-item">
+                  <a id="title41" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2291,7 +2402,7 @@
               </tr>
               <tr>
                 <td>
-                  <a id="title42" href="./detail42.html" class="list-item">
+                  <a id="title42" href="./detail.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
@@ -2345,7 +2456,7 @@
             <tfoot>
               <tr>
                 <td>
-                  <a href="javascript:window.scrollTo(0,0);"
+                  <a href="#top"
                     ><img
                       src="../data/img/top.png"
                       style="width: 50px; margin-top: 20px"
@@ -2354,139 +2465,6 @@
               </tr>
             </tfoot>
           </table>
-        </div>
-      </div>
-
-      <div class="imsi-right">
-        <div class="imsi-right-content-frame">
-          <div class="searched">
-            <table class="searched" style="width: 240px">
-              <tr>
-                <th>이전에 검색했던 페이지</th>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/han.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  한글 2017
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/word.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Word
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/PL.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Polaris Office
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/notion.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Notion
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/excel.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Excel
-                </td>
-              </tr>
-              <!-- <tr>
-                <td>
-                  <img
-                    src="../data/img/powerpoint.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Powerpoint
-                </td>
-              </tr> -->
-            </table>
-          </div>
-          <div class="used">
-            <table class="searched" style="width: 240px">
-              <tr>
-                <th>내가 즐겨찾기한 툴</th>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/han.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-
-                  한글 2017
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/word.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Word
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/PL.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Polaris Office
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/notion.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Notion
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/excel.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Excel
-                </td>
-              </tr>
-              <!-- <tr>
-                <td>
-                  <img
-                    src="../data/img/powerpoint.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Powerpoint
-                </td>
-              </tr> -->
-            </table>
-          </div>
-          <a href="javascript:window.scrollTo(0,0);"
-            ><img
-              src="../data/img/top.png"
-              style="width: 50px; margin-top: 20px"
-          /></a>
         </div>
       </div>
     </div>

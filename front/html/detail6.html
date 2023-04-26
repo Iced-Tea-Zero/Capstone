@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
-    <link href="../data/style/list.css" rel="stylesheet" />
+    <link href="../data/style/detail.css" rel="stylesheet" />
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script src="../js/list.js"></script>
+    <script src="../js/detail.js"></script>
   </head>
   <body>
     <div class="header">
@@ -37,17 +37,140 @@
     </div>
     <div class="login">
       <a
-        href="../html/login.html"
+        href="./login.html"
         style="color: aliceblue; text-decoration-line: none"
       >
         로그인 <br
       /></a>
     </div>
+
     <div class="imsi-sub-frame">
       <div class="imsi-left">
         <div class="imsi-left-content-frame">
-          <table class="list">
-            <thead>
+          <div class="report">
+            <table class="list" style="width: 700px">
+              <thead>
+                <tr>
+                  <th id="title0">
+                    <script>
+                      $.getJSON("../data/test.json", function (data) {
+                        for (let i = 0; i < data.length; i++) {
+                          document.getElementById("title0").innerHTML =
+                            data[6].title;
+                        }
+                      });
+                    </script>
+                  </th>
+                </tr>
+              </thead>
+              <tr>
+                <td>
+                  <img
+                    src="../data/img/icon.png"
+                    class=""
+                    style="width: 200px"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a id="link0" href="data[key].link">
+                    <script>
+                      $.getJSON("../data/test.json", function (data) {
+                        for (key in data) {
+                          document.getElementById("link0").innerHTML =
+                            data[6].link;
+                          document.getElementById("link0").href = data[6].link;
+                        }
+                      });
+                    </script>
+                  </a>
+                  <img
+                    id="img1"
+                    src="../data/img/star1.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                  <img
+                    id="img2"
+                    src="../data/img/star2.png"
+                    style="width: 20px; vertical-align: top"
+                  />
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span class="imsi-button1">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      무료
+                    </label>
+                  </span>
+                  <span class="imsi-button2">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      설치
+                    </label>
+                  </span>
+                  <span class="imsi-button3">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      문서
+                    </label>
+                  </span>
+                  <span class="imsi-button4">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      편집
+                    </label>
+                  </span>
+                  <span class="imsi-button5">
+                    <label>
+                      <input type="checkbox" name="hash" />
+                      온라인
+                    </label>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <textarea id="detail0" style="width: 680px; height: 300px">
+                  </textarea>
+                  <script>
+                    $.getJSON("../data/test.json", function (data) {
+                      for (key in data) {
+                        document.getElementById("detail0").innerHTML =
+                          data[6].detail;
+                      }
+                    });
+                  </script>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="../html/list.html">
+                    <img
+                      src="../data/img/back.png"
+                      style="width: 20px; vertical-align: top"
+                  /></a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="imsi-right">
+        <div class="imsi-right-content-frame">
+          <table
+            class="list"
+            style="
+              width: 380px;
+              table-layout: fixed;
+              word-break: break-all;
+              height: auto;
+            "
+          >
+            <thead id="top">
               <tr>
                 <th>
                   <a href="../html/select2.html" class="list-item">
@@ -58,28 +181,28 @@
                   <span class="imsi-button1">
                     <label>
                       <input type="checkbox" name="hash" />
-                      문서
+                      무료
                     </label>
                   </span>
                   <span class="imsi-button2">
                     <label>
                       <input type="checkbox" name="hash" />
-                      제작
+                      설치
                     </label>
                   </span>
                   <span class="imsi-button3">
                     <label>
                       <input type="checkbox" name="hash" />
-                      협업
+                      문서
                     </label>
                   </span>
                   <span class="imsi-button4">
                     <label>
                       <input type="checkbox" name="hash" />
-                      공유
+                      편집
                     </label>
                   </span>
-                  <span class="imsi-button4">
+                  <span class="imsi-button5">
                     <label>
                       <input type="checkbox" name="hash" />
                       온라인
@@ -2345,7 +2468,7 @@
             <tfoot>
               <tr>
                 <td>
-                  <a href="javascript:window.scrollTo(0,0);"
+                  <a href="#top"
                     ><img
                       src="../data/img/top.png"
                       style="width: 50px; margin-top: 20px"
@@ -2354,139 +2477,6 @@
               </tr>
             </tfoot>
           </table>
-        </div>
-      </div>
-
-      <div class="imsi-right">
-        <div class="imsi-right-content-frame">
-          <div class="searched">
-            <table class="searched" style="width: 240px">
-              <tr>
-                <th>이전에 검색했던 페이지</th>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/han.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  한글 2017
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/word.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Word
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/PL.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Polaris Office
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/notion.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Notion
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/excel.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Excel
-                </td>
-              </tr>
-              <!-- <tr>
-                <td>
-                  <img
-                    src="../data/img/powerpoint.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Powerpoint
-                </td>
-              </tr> -->
-            </table>
-          </div>
-          <div class="used">
-            <table class="searched" style="width: 240px">
-              <tr>
-                <th>내가 즐겨찾기한 툴</th>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/han.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-
-                  한글 2017
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/word.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Word
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/PL.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Polaris Office
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/notion.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Notion
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img
-                    src="../data/img/excel.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Excel
-                </td>
-              </tr>
-              <!-- <tr>
-                <td>
-                  <img
-                    src="../data/img/powerpoint.png"
-                    style="width: 30px; vertical-align: middle"
-                  />
-                  Powerpoint
-                </td>
-              </tr> -->
-            </table>
-          </div>
-          <a href="javascript:window.scrollTo(0,0);"
-            ><img
-              src="../data/img/top.png"
-              style="width: 50px; margin-top: 20px"
-          /></a>
         </div>
       </div>
     </div>

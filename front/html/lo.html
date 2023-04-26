@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>tool tools</title>
+  </head>
+  <body>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <button onclick="googleLogin()">Google 로그인</button>
+    <script>
+      var CLIENT_ID =
+        "305154557254-p9tecptd3h7um4scdni233ascdmh96es.apps.googleusercontent.com";
+      var API_KEY = "AIzaSyDU0QDY0pMl-MpHxhCxBp31r-oY_bSQ8Js";
+      var DISCOVERY_DOCS = [
+        "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
+      ];
+      var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+
+      function handleClientLoad() {
+        gapi.client.setApiKey(API_KEY);
+        window.setTimeout(checkAuth, 1);
+      }
+
+      function checkAuth() {
+        gapi.auth.authorize(
+          {
+            client_id: CLIENT_ID,
+            scope: SCOPES,
+            immediate: true,
+          },
+          handleAuthResult
+        );
+      }
+
+      function handleAuthResult(authResult) {
+        var authorizeButton = document.getElementById("authorize-button");
+        if (authResult && !authResult.error) {
+          authorizeButton.style.display = "none";
+          makeApiCall();
+        } else {
+          authorizeButton.style.display = "block";
+          authorizeButton.onclick = handleAuthClick;
+        }
+      }
+
+      function handleAuthClick(event) {
+        gapi.auth.authorize(
+          {
+            client_id: CLIENT_ID,
+            scope: SCOPES,
+            immediate: false,
+          },
+          handleAuthResult
+        );
+        return false;
+      }
+
+      function makeApiCall() {
+        gapi.client.load("calendar", "v3", function () {
+          var request = gapi.client.calendar.events.list({
+            calendarId: "primary",
+            timeMin: new Date().toISOString(),
+            showDeleted: false,
+            singleEvents: true,
+            maxResults: 10,
+            orderBy: "startTime",
+          });
+
+          request.execute(function (resp) {
+            var events = resp.items;
+            appendPre("Upcoming events:");
+
+            if (events.length > 0) {
+              for (var i = 0; i < events.length; i++) {
+                var event = events[i];
+                var when = event.start.dateTime;
+                if (!when) {
+                  when = event.start.date;
+                }
+                appendPre(event.summary + " (" + when + ")");
+              }
+            } else {
+              appendPre("No upcoming events found.");
+            }
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
