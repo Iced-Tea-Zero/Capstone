@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
     <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="../data/style/select2.css" type="text/css" />
+    <link rel="stylesheet" href="select.css" type="text/css" />
   </head>
   <body>
     <div class="header">
@@ -41,7 +41,7 @@
     <div class="imsi-sub-frame">
       <div class="pick">
         <span class="imsi-button6">
-          <a href="./list.html">
+          <a href="list.html">
             <input type="submit" name="submit" value="GO" id="go" />
           </a>
         </span>
@@ -62,167 +62,12 @@
       </form>
       <div class="imsi-left">
         <div class="imsi-left-content-frame">
-
           <div class="container" id="button-container">
-            <a class="button btnFade btnLightBlue" href="#" id="show-btn-1"> A</a>
-            <a class="button btnFade btnLightBlue" href="#" id="show-btn-2"> B</a>
-            <a class="button btnFade btnLightBlue" href="#" id="show-btn-3"> C</a>
-            <a class="button btnFade btnLightBlue" href="#" id="show-btn-4"> D</a>
-            <br><br><br>
-            <a class="button btnFade btn2Blue" href="#" id="show-btn-5"> E</a>
-            <a class="button btnFade btn2Blue" href="#" id="show-btn-6"> F</a>
-            <a class="button btnFade btn2Blue" href="#" id="show-btn-7"> G</a>
-            <a class="button btnFade btn2Blue" href="#" id="show-btn-8"> H</a>
-            <br><br><br>
-            <a class="button btnFade btn3Blue" href="#" id="show-btn-9"> I</a>
-            <a class="button btnFade btn3Blue" href="#" id="show-btn-10"> J</a>
-            <a class="button btnFade btn3Blue" href="#" id="show-btn-11"> K</a>
-            <a class="button btnFade btn3Blue" href="#" id="show-btn-12"> L</a>
-            <br><br><br>
-            <a class="button btnFade btn4Blue" href="#" id="show-btn-13"> M</a>
-            <a class="button btnFade btn4Blue" href="#" id="show-btn-14"> N</a>
-            <a class="button btnFade btn4Blue" href="#" id="show-btn-15"> O</a>
-            <a class="button btnFade btn4Blue" href="#" id="show-btn-16"> P</a>
-
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src = "buttoncreate.js"></script>
           </div>
-
-          <script>
-            function showNewButton() {
-              const buttonId = this.id;
-              let buttonText = "";
-
-              if (buttonId === "show-btn-1") {
-                buttonText = "A";
-              } else if (buttonId === "show-btn-2") {
-                buttonText = "B";
-              } else if (buttonId === "show-btn-3") {
-                buttonText = "C";
-              } else if (buttonId === "show-btn-4") {
-                buttonText = "D";
-              } else if (buttonId === "show-btn-5") {
-                buttonText = "E";
-              } else if (buttonId === "show-btn-6") {
-                buttonText = "F";
-              } else if (buttonId === "show-btn-7") {
-                buttonText = "G";
-              } else if (buttonId === "show-btn-8") {
-                buttonText = "H";
-              } else if (buttonId === "show-btn-9") {
-                buttonText ="I";
-              } else if (buttonId === "show-btn-10") {
-                buttonText = "J";
-              } else if (buttonId === "show-btn-11") {
-                buttonText = "K";
-              } else if (buttonId === "show-btn-12") {
-                buttonText = "L";
-              } else if (buttonId === "show-btn-13") {
-                buttonText = "M";
-              } else if (buttonId === "show-btn-14") {
-                buttonText = "N";
-              } else if (buttonId === "show-btn-15") {
-                buttonText = "O";
-              } else if (buttonId === "show-btn-16") {
-                buttonText = "P";
-              }
-
-              const newBtn = document.createElement("button");
-              newBtn.textContent = buttonText; // 생성한 버튼의 텍스트 설정
-              newBtn.classList.add("button", "btnLightBlue", "btnFade");
-
-              const closeBtn = document.createElement("span");
-              closeBtn.textContent = "×";
-              closeBtn.classList.add("close");
-              newBtn.appendChild(closeBtn);
-              newBtn.addEventListener("click", function () {
-                this.remove();
-                if (buttonId === "show-btn-1") {
-                  document.getElementById("show-btn-1").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-2") {
-                  document.getElementById("show-btn-2").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-3") {
-                  document.getElementById("show-btn-3").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-4") {
-                  document.getElementById("show-btn-4").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-5") {
-                  document.getElementById("show-btn-5").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-6") {
-                  document.getElementById("show-btn-6").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-7") {
-                  document.getElementById("show-btn-7").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-8") {
-                  document.getElementById("show-btn-8").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-9") {
-                  document.getElementById("show-btn-9").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-10") {
-                  document.getElementById("show-btn-10").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-11") {
-                  document.getElementById("show-btn-11").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-12") {
-                  document.getElementById("show-btn-12").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-13") {
-                  document.getElementById("show-btn-13").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-14") {
-                  document.getElementById("show-btn-14").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-15") {
-                  document.getElementById("show-btn-15").addEventListener("click", showNewButton);
-                } else if (buttonId === "show-btn-16") {
-                  document.getElementById("show-btn-16").addEventListener("click", showNewButton);
-                }
-              });
-
-              document.querySelector(".pick").appendChild(newBtn);
-              if (buttonId === "show-btn-1") {
-                document.getElementById("show-btn-1").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-2") {
-                document.getElementById("show-btn-2").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-3") {
-                document.getElementById("show-btn-3").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-4") {
-                document.getElementById("show-btn-4").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-5") {
-                document.getElementById("show-btn-5").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-6") {
-                document.getElementById("show-btn-6").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-7") {
-                document.getElementById("show-btn-7").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-8") {
-                document.getElementById("show-btn-8").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-9") {
-                document.getElementById("show-btn-9").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-10") {
-                document.getElementById("show-btn-10").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-11") {
-                document.getElementById("show-btn-11").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-12") {
-                document.getElementById("show-btn-12").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-13") {
-                document.getElementById("show-btn-13").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-14") {
-                document.getElementById("show-btn-14").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-15") {
-                document.getElementById("show-btn-15").removeEventListener("click", showNewButton);
-              } else if (buttonId === "show-btn-16") {
-                document.getElementById("show-btn-16").removeEventListener("click", showNewButton);
-              }
-            }
-
-            document.getElementById("show-btn-1").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-2").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-3").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-4").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-5").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-6").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-7").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-8").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-9").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-10").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-11").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-12").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-13").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-14").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-15").addEventListener("click", showNewButton);
-            document.getElementById("show-btn-16").addEventListener("click", showNewButton);
-
-          </script>
+        </div>
+      </div>
+          <script src = "buttonclick.js"></script>
         </body>
       </html>
