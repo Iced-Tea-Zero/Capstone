@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/detail.js"></script>
+    <script src="../js/fruits.js"></script>
   </head>
   <body>
     <div class="header">
@@ -24,6 +25,7 @@
           <input
             type="text"
             class="search"
+            id="searchInput"
             placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
           />
           <input
@@ -34,7 +36,67 @@
           />
         </form>
       </div>
+      <script>
+        function searchFruits() {
+          const searchInput = document.getElementById("searchInput");
+          const searchTerm = searchInput.value.toLowerCase();
+          const resultsContainer = document.getElementById("results");
+          resultsContainer.innerHTML = "";
+
+          const filteredFruits = fruits.filter((fruit) => {
+            return fruit.title.toLowerCase().includes(searchTerm);
+          });
+
+          if (filteredFruits.length > 0) {
+            filteredFruits.forEach((fruit) => {
+              const div = document.createElement("div");
+              div.style.margin = "auto";
+              // div.style.backgroundColor = "skyblue";
+              div.style.fontSize = "20px";
+              div.style.width = "500px";
+              div.textContent = fruit.title;
+              resultsContainer.appendChild(div);
+            });
+          } else {
+            const p = document.createElement("p");
+            p.textContent = "등록된 사이트가 없습니다.";
+            resultsContainer.appendChild(p);
+          }
+        }
+
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", searchFruits);
+
+        function submitSearch() {
+          const searchInput = document.getElementById("searchInput");
+          const searchTerm = searchInput.value.trim().toLowerCase();
+
+          if (searchTerm !== "") {
+            const matchingFruits = fruits.filter((fruit) => {
+              return fruit.title.toLowerCase().includes(searchTerm);
+            });
+
+            if (matchingFruits.length > 0) {
+              const fruitIndex = fruits.indexOf(matchingFruits[0]);
+              const url =
+                "http://127.0.0.1:5501/Capstone/front/html/detail" +
+                fruitIndex +
+                ".html";
+              window.location.href = url;
+            } else {
+              console.log("검색 결과가 없습니다.");
+            }
+          }
+        }
+
+        const searchForm = document.querySelector(".detail-search form");
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          submitSearch();
+        });
+      </script>
     </div>
+    <div id="results" style=""></div>
     <div class="login">
       <a
         href="./login.html"
@@ -190,7 +252,7 @@
             <tbody>
               <tr>
                 <td>
-                  <a id="title" href="./detail.html" class="list-item">
+                  <a id="title" href="./detail0.html" class="list-item">
                     <span class="item-name">
                       <script>
                         $.getJSON("../data/test.json", function (data) {
