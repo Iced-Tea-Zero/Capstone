@@ -10,9 +10,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
   background-color: #235ba3;
 }
+
 .header-item {
   flex-basis: 10%;
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fruit Search</title>
+  </head>
+  <body>
+    <input type="text" id="searchInput" style="margin: 30px; height: 30px" />
+    <div id="results"></div>
+
+    <script>
+      const fruits = [
+        {
+          name: "apple",
+          id: "1",
+        },
+        {
+          name: "banana",
+          id: "2",
+        },
+        {
+          name: "pear",
+          id: "3",
+        },
+        {
+          name: "grape",
+          id: "4",
+        },
+        {
+          name: "orange",
+          id: "5",
+        },
+        {
+          name: "tomato",
+          id: "6",
+        },
+      ];
+
+      function searchFruits() {
+        const searchInput = document.getElementById("searchInput");
+        const searchTerm = searchInput.value.toLowerCase();
+        const resultsContainer = document.getElementById("results");
+        resultsContainer.innerHTML = "";
+
+        const filteredFruits = fruits.filter((fruit) => {
+          return fruit.name.toLowerCase().includes(searchTerm);
+        });
+
+        if (filteredFruits.length > 0) {
+          filteredFruits.forEach((fruit) => {
+            const div = document.createElement("div");
+            div.style.margin = "auto";
+            div.style.marginTop = "50px";
+            div.style.backgroundColor = "pink";
+            div.style.fontSize = "20px";
+            div.style.width = "100px";
+            div.textContent = fruit.name;
+            resultsContainer.appendChild(div);
+          });
+        } else {
+          const p = document.createElement("p");
+          p.textContent = "No matching fruits found.";
+          resultsContainer.appendChild(p);
+        }
+      }
+
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", searchFruits);
+    </script>
+  </body>
+</html>
