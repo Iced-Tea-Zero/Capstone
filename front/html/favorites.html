@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOOL TOOLS</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="select.css" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-item">
+        <img src="logo.png" class="logo" />
+      </div>
+
+      <div class="detail-search">
+        <form>
+          <input
+            type="text"
+            class="search"
+            placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="검색"
+            style="width: 50px; height: 35px"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="login">
+      <a
+        href="./login.html"
+        style="color: aliceblue; text-decoration-line: none"
+      >
+        로그인 <br
+      /></a>
+    </div>
+
+    <br><br><br>
+    <div class="imsi-sub-frame2">
+      <div class="fav">
+        <ul id="website-list"></ul>
+      </div>
+    </div>
+    <script>
+    fetch('sitelink.json')
+  .then(response => response.json())
+  .then(data => {
+    const websiteList = document.getElementById('website-list');
+
+    data.forEach(website => {
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      const horizontalLine = document.createElement('hr'); // Create the horizontal line element
+
+      link.classList.add('website-link');
+      link.textContent = website.title;
+      link.href = website.link;
+      link.target = '_blank';
+
+      listItem.appendChild(link);
+      listItem.appendChild(horizontalLine); // Append the horizontal line after the link
+      websiteList.appendChild(listItem);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+    </script>
+  </body>
+</html>
