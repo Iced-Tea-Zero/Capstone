@@ -12,6 +12,37 @@
   align-items: center;
   background-color: #235ba3;
 }
+
+.detail-search {
+  position: relative;
+}
+
+#results {
+  position: absolute;
+  top: 100%;
+  left: 115px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+  width: 500px;
+}
+
+#results.show {
+  display: block;
+}
+
+#results div {
+  padding: 3px 0px;
+  cursor: pointer;
+}
+
+#results div:hover {
+  background-color: #f0f0f0;
+}
+
 .header-item {
   flex-basis: 10%;
 }
