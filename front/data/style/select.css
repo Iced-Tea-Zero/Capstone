@@ -222,3 +222,40 @@ input[type="checkbox"] {
   border: 1px solid #c6d1e0;
   background-color: #c6d1e0;
 }
+
+.imsi-sub-frame2 {
+  position: relative;
+  width: 950px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#website-list li {
+  position: relative; 
+
+}
+
+#website-list {
+  padding-bottom: 20px; 
+  position: relative; 
+  list-style: none;
+  text-align: center;
+  
+}
+
+#website-list hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 100%; 
+
+  bottom: 0; 
+}
+
+
+.website-link {
+  text-decoration: underline;
+}
