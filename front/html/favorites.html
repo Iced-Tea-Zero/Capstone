@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
-    <link rel="icon" type="image/png" href="favicon.png"/>
-    <link rel="stylesheet" href="select.css" type="text/css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="../data/style/select.css" type="text/css" />
   </head>
   <body>
     <div class="header">
       <div class="header-item">
-        <img src="logo.png" class="logo" />
+        <img src="../data/img/logo.png" class="logo" />
       </div>
-
       <div class="detail-search">
         <form>
           <input
@@ -32,44 +31,43 @@
     </div>
     <div class="login">
       <a
-        href="./login.html"
+        href="../login.html"
         style="color: aliceblue; text-decoration-line: none"
       >
         로그인 <br
       /></a>
     </div>
 
-    <br><br><br>
+    <br /><br /><br />
     <div class="imsi-sub-frame2">
       <div class="fav">
         <ul id="website-list"></ul>
       </div>
     </div>
     <script>
-    fetch('sitelink.json')
-  .then(response => response.json())
-  .then(data => {
-    const websiteList = document.getElementById('website-list');
+      fetch("sitelink.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const websiteList = document.getElementById("website-list");
 
-    data.forEach(website => {
-      const listItem = document.createElement('li');
-      const link = document.createElement('a');
-      const horizontalLine = document.createElement('hr');
+          data.forEach((website) => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            const horizontalLine = document.createElement("hr");
 
-      link.classList.add('website-link');
-      link.textContent = website.title;
-      link.href = website.link;
-      link.target = '_blank';
+            link.classList.add("website-link");
+            link.textContent = website.title;
+            link.href = website.link;
+            link.target = "_blank";
 
-      listItem.appendChild(link);
-      listItem.appendChild(horizontalLine);
-      websiteList.appendChild(listItem);
-    });
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-
+            listItem.appendChild(link);
+            listItem.appendChild(horizontalLine);
+            websiteList.appendChild(listItem);
+          });
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     </script>
   </body>
 </html>

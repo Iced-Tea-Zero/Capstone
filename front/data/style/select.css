@@ -234,27 +234,24 @@ input[type="checkbox"] {
 }
 
 #website-list li {
-  position: relative; 
-
+  position: relative;
 }
 
 #website-list {
-  padding-bottom: 20px; 
-  position: relative; 
+  padding-bottom: 20px;
+  position: relative;
   list-style: none;
   text-align: center;
-  
 }
 
 #website-list hr {
   margin: 10px 0;
   border: none;
   border-top: 1px solid #ccc;
-  width: 100%; 
+  width: 100%;
 
-  bottom: 0; 
+  bottom: 0;
 }
-
 
 .website-link {
   text-decoration: underline;
