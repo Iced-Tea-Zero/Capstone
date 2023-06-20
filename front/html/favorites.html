@@ -54,7 +54,7 @@
     data.forEach(website => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      const horizontalLine = document.createElement('hr'); // Create the horizontal line element
+      const horizontalLine = document.createElement('hr');
 
       link.classList.add('website-link');
       link.textContent = website.title;
@@ -62,7 +62,7 @@
       link.target = '_blank';
 
       listItem.appendChild(link);
-      listItem.appendChild(horizontalLine); // Append the horizontal line after the link
+      listItem.appendChild(horizontalLine);
       websiteList.appendChild(listItem);
     });
   })
