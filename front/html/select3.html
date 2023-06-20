@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOOL TOOLS</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="stylesheet" href="select.css" type="text/css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-item">
+        <img src="logo.png" class="logo" />
+      </div>
+
+      <div class="detail-search">
+        <form>
+          <input
+            type="text"
+            class="search"
+            placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
+          />
+          <input
+            type="submit"
+            name="submit"
+            value="검색"
+            style="width: 50px; height: 35px"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="login">
+      <a
+        href="./login.html"
+        style="color: aliceblue; text-decoration-line: none"
+      >
+        로그인 <br
+      /></a>
+    </div>
+    <div class="imsi-sub-frame">
+      <div class="pick">
+        <span class="imsi-button6">
+          <a href="list.html">
+            <input type="submit" name="submit" value="GO" id="go" />
+          </a>
+        </span>
+      </div>
+      <form>
+        <input
+          type="text"
+          class="search"
+          placeholder="     태그 검색 바 (여기서 검색해서 태그 박스 추가할 수 있음)"
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="검색"
+          style="width: 50px; height: 35px"
+        />
+        <br><br><br>
+      </form>
+      <div class="imsi-left">
+        <div class="imsi-left-content-frame">
+          <div class="container" id="button-container">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script src = "buttoncreate.js"></script>
+          </div>
+        </div>
+      </div>
+          <script src = "buttonclick.js"></script>
+       <script>
+    $(document).ready(function() {
+      var filter = ""; // 검색어 변수 초기화
+
+      $(document).on('click', '.btn', function() {
+        filter = $(this).text();
+        $(this).addClass("pick").siblings().removeClass("pick"); 
+
+        
+        $.getJSON("sitelink.json", function(data) {
+          var filteredSites = data.filter(function(site) {
+            return site.hashtag.includes(filter);
+          });
+
+          localStorage.setItem("filteredSites", JSON.stringify(filteredSites));
+        });
+      });
+
+      $("#go").click(function() {
+        window.location.href = "list.html"; // 검색 결과 페이지로 이동
+      });
+    });
+  </script>
+        </body>
+      
+      </html>
