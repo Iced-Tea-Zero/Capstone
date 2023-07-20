@@ -134,20 +134,20 @@
 			$(document).ready(function() {
 			  var filter = localStorage.getItem("filter"); // 검색어를 localStorage에서 가져옴
 			  var selectedTags = filter.split(", "); // 선택한 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
-		  
+
 			  $.getJSON("../data/sitelink.json", function(data) {
 				$.each(data, function(key, value) {
 				  var hashtags = value.hashtag.split(", "); // 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
 				  var isMatched = selectedTags.every(function(tag) {
 					return hashtags.includes(tag); // 선택한 모든 해시태그가 항목의 해시태그에 포함되어야 함
 				  });
-		  
+
 				  if (isMatched) {
 					var titleLink = "<a href='detail" + key + ".html'>" + value.title + "</a>";
 					$("table").append("<tr><td>" + titleLink + "</td><td><a href='" + value.link + "'>" + value.link + "</a></td><td>" + value.hashtag + "</td></tr>");
 				  }
 				});
-		  
+
 				// 선택한 제목 클릭 시 해당 링크로 이동
 				$("table").on("click", "a", function(e) {
 				  e.preventDefault(); // 기본 동작 중단 (페이지 이동 방지)
@@ -157,10 +157,9 @@
 			  });
 			});
 		  </script>
-		  
-		  
+
+
 	</table>
 
 </body>
 </html>
- 

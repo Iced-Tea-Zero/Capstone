@@ -22,7 +22,7 @@
             placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
           />
           <input
-            type="submit" 
+            type="submit"
             name="submit"
             value="검색"
             style="width: 50px; height: 35px"
@@ -75,9 +75,9 @@
 
       $(document).on('click', '.btn', function() {
         filter = $(this).text();
-        $(this).addClass("pick").siblings().removeClass("pick"); 
+        $(this).addClass("pick").siblings().removeClass("pick");
 
-        
+
         $.getJSON("sitelink.json", function(data) {
           var filteredSites = data.filter(function(site) {
             return site.hashtag.includes(filter);
@@ -86,12 +86,12 @@
           localStorage.setItem("filteredSites", JSON.stringify(filteredSites));
         });
       });
- 
+
       $("#go").click(function() {
-        window.location.href = "list.html"; // 검색 결과 페이지로 이동
+        window.location.href = "list2.html"; // 검색 결과 페이지로 이동
       });
     });
   </script>
         </body>
-      
+
       </html>
