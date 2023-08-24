@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+* {
+  font-family: "Jua", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: #235ba3;
+}
+.header-item {
+  flex-basis: 10%;
+}
+
+.logo {
+  width: 140px;
+  margin-left: 10px;
+}
+
+.detail-search {
+  flex-basis: 50%;
+}
+
+.search {
+  width: 500px;
+  height: 30px;
+}
+
+.login {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+.login:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+body {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.imsi-sub-frame {
+  position: relative;
+  width: 950px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.imsi-left {
+  margin-top: 30px;
+  position: absolute;
+  left: 0;
+  width: 680px;
+  height: 450px;
+  background-image: url("../img/grid.png");
+}
+.pick {
+  border: 3px solid #eaeaea;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#go {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #174a8d;
+  background-color: #174a8d;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+#go:hover {
+  border: 1px solid #113565;
+  background-color: #113565;
+}
+
+.imsi-left-content-frame {
+  width: 680px;
+  margin: 0 auto;
+}
+
+.imsi-right {
+  margin-top: 30px;
+  position: absolute;
+  right: 0;
+  width: 240px;
+  height: 370px;
+  background-color: #eaeaea;
+  border-radius: 10px;
+}
+
+.imsi-right-content-frame {
+  display: block;
+  width: 240px;
+  margin: 0 auto;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.imsi-button1 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #235ba3;
+  background-color: #235ba3;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.imsi-button1:hover {
+  border: 1px solid #1a4680;
+  background-color: #1a4680;
+}
+
+.imsi-button2 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #3e7dcd;
+  background-color: #3e7dcd;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.imsi-button2:hover {
+  border: 1px solid #3464a2;
+  background-color: #3464a2;
+}
+
+.imsi-button3 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #75adf5;
+  background-color: #75adf5;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button3:hover {
+  border: 1px solid #6291cf;
+  background-color: #6291cf;
+}
+.imsi-button4 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #bcd9ff;
+  background-color: #bcd9ff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button4:hover {
+  border: 1px solid #a6c0e1;
+  background-color: #a6c0e1;
+}
+.imsi-button5 {
+  margin: 10px;
+  color: #75adf5;
+  border: 1px solid #e3efff;
+  background-color: #e3efff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button5:hover {
+  border: 1px solid #c6d1e0;
+  background-color: #c6d1e0;
+}
+
+.imsi-sub-frame2 {
+  position: relative;
+  width: 950px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#website-list li {
+  position: relative;
+}
+
+#website-list {
+  padding-bottom: 20px;
+  position: relative;
+  list-style: none;
+  text-align: center;
+}
+
+#website-list hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 100%;
+
+  bottom: 0;
+}
+
+.website-link {
+  text-decoration: underline;
+}

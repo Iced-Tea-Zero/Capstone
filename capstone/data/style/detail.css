@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
+* {
+  font-family: "Jua", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #235ba3;
+}
+
+.detail-search {
+  position: relative;
+}
+
+#results {
+  position: absolute;
+  top: 100%;
+  left: 115px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  display: none;
+  width: 500px;
+}
+
+#results.show {
+  display: block;
+}
+
+#results div {
+  padding: 3px 0px;
+  cursor: pointer;
+}
+
+#results div:hover {
+  background-color: #f0f0f0;
+}
+
+.header-item {
+  flex-basis: 10%;
+}
+
+.logo {
+  width: 140px;
+  margin-left: 10px;
+}
+
+.detail-search {
+  flex-basis: 50%;
+}
+
+.search {
+  width: 500px;
+  height: 30px;
+}
+
+.login {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+.login:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+body {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.imsi-sub-frame {
+  position: absolute;
+  left: 15%;
+  width: 950px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.imsi-left {
+  margin-top: 30px;
+  position: absolute;
+  left: 0;
+  width: 680px;
+  height: 450px;
+}
+
+.imsi-left-content-frame {
+  width: 680px;
+  /* left: 0; */
+}
+
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead {
+  background-color: #cde8fc;
+}
+
+.list {
+  align-items: left;
+  border-radius: 10px;
+}
+
+.list-item {
+  text-decoration-line: none;
+  color: black;
+}
+
+.list-item:hover {
+  color: rgb(17, 75, 175);
+}
+
+.item-name {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.info {
+  height: 120px;
+}
+
+.imsi-right {
+  margin-top: 30px;
+  position: absolute;
+  right: 0;
+  width: 240px;
+  height: 700px;
+  border-radius: 10px;
+}
+
+.imsi-right-content-frame {
+  display: block;
+  width: 400px;
+  height: 650px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.searched {
+  border-radius: 10px;
+}
+
+.used {
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.imsi-button1 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #235ba3;
+  background-color: #235ba3;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.imsi-button1:hover {
+  border: 1px solid #1a4680;
+  background-color: #1a4680;
+}
+
+.imsi-button2 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #3e7dcd;
+  background-color: #3e7dcd;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.imsi-button2:hover {
+  border: 1px solid #3464a2;
+  background-color: #3464a2;
+}
+
+.imsi-button3 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #75adf5;
+  background-color: #75adf5;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button3:hover {
+  border: 1px solid #6291cf;
+  background-color: #6291cf;
+}
+.imsi-button4 {
+  margin: 10px;
+  color: #fff;
+  border: 1px solid #bcd9ff;
+  background-color: #bcd9ff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button4:hover {
+  border: 1px solid #a6c0e1;
+  background-color: #a6c0e1;
+}
+.imsi-button5 {
+  margin: 10px;
+  color: #75adf5;
+  border: 1px solid #e3efff;
+  background-color: #e3efff;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  display: inline-block;
+}
+
+.imsi-button5:hover {
+  border: 1px solid #c6d1e0;
+  background-color: #c6d1e0;
+}

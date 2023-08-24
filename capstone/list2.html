@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOOL TOOLS</title>
+  <link href="../data/style/list2.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script src="../js/fruits.js"></script>
+  <script src="../js/list.js"></script>
+
+
+
+
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-item">
+      <img src="../data/img/logo.png" class="logo" />
+    </div>
+
+    <div class="detail-search">
+      <form>
+        <input
+          type="text"
+          class="search"
+          placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
+        />
+        <input
+          type="submit"
+          name="submit"
+          value="검색"
+          style="width: 50px; height: 35px"
+        />
+      </form>
+    </div>
+  </div>
+
+  <div class="login">
+    <a
+      href="./login.html"
+      style="color: aliceblue; text-decoration-line: none"
+    >
+      로그인 <br
+    /></a>
+  </div>
+
+  <h2></h2>
+
+  <table>
+    <tr>
+      <th class="title-col">Title</th>
+      <th class="link-col">Link</th>
+      <th class="hashtag-col">Hashtag</th>
+    </tr>
+
+    <!-- JSON 데이터를 불러와서 HTML로 변환 -->
+    <script>
+      $(document).ready(function() {
+        var filter = localStorage.getItem("filter"); // 검색어를 localStorage에서 가져옴
+        var selectedTags = filter.split(", "); // 선택한 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
+
+        $.getJSON("../data/sitelink.json", function(data) {
+          $("table").empty(); // 기존 결과 제거
+
+          var matchingData = data.filter(function(value) {
+            var hashtags = value.hashtag.split(", ");
+            return selectedTags.every(function(tag) {
+              return hashtags.includes(tag);
+            });
+          });
+
+          if (matchingData.length > 0) {
+            $.each(matchingData, function(key, value) {
+              var titleLink = "<a href='detail" + key + ".html'>" + value.title + "</a>";
+              $("table").append("<tr><td>" + titleLink + "</td><td><a href='" + value.link + "'>" + value.link + "</a></td><td>" + value.hashtag + "</td></tr>");
+            });
+
+            // 선택한 제목 클릭 시 해당 링크로 이동
+            $("table").on("click", "a", function(e) {
+              e.preventDefault(); // 기본 동작 중단 (페이지 이동 방지)
+              var link = $(this).attr("href");
+              window.location.href = link; // 클릭한 링크로 페이지 이동
+            });
+          } else {
+            var p = document.createElement("p");
+            p.textContent = "검색 결과가 없습니다.";
+            $("table").append(p);
+          }
+        });
+      });
+    </script>
+  </table>
+
+</body>
+</html>
