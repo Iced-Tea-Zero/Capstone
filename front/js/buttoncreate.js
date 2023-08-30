@@ -1,5 +1,5 @@
 var buttonContainer = $("#button-container");
-var numButtons = 41;
+var numButtons = 53;
 var buttonColors = ["btnLightBlue", "btn2Blue", "btn3Blue", "btn4Blue"];
 var buttonLetters = [
   "제작",
@@ -43,6 +43,18 @@ var buttonLetters = [
   "DB",
   "아이콘",
   "디자인 트렌드",
+  "의상",
+  "굿즈",
+  "상품",
+  "움짤",
+  "자막",
+  "AI",
+  "다운로드",
+  "인쇄물",
+  "모자이크",
+  "크로마키",
+  "사진",
+  "UI",
 ];
 
 for (var i = 0; i < numButtons; i++) {
