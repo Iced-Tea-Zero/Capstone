@@ -7,18 +7,23 @@
     <title>TOOL TOOLS</title>
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" href="../data/style/select2.css" type="text/css" />
+    <script src="../js/fruits.js"></script>
   </head>
   <body>
     <div class="header">
       <div class="header-item">
+        <a href="../html/select3.html">
         <img src="../data/img/logo.png" class="logo" />
+        </a>
       </div>
 
       <div class="detail-search">
+        <div id="results"></div>
         <form>
           <input
             type="text"
             class="search"
+            id="searchInput"
             placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
           />
           <input
@@ -29,6 +34,67 @@
           />
         </form>
       </div>
+      <script>
+        function searchFruits() {
+          const searchInput = document.getElementById("searchInput");
+          const searchTerm = searchInput.value.toLowerCase();
+          const resultsContainer = document.getElementById("results");
+          resultsContainer.innerHTML = "";
+
+          const filteredFruits = fruits.filter((fruit) => {
+            return fruit.title.toLowerCase().includes(searchTerm);
+          });
+
+          if (filteredFruits.length > 0) {
+            filteredFruits.forEach((fruit) => {
+              const div = document.createElement("div");
+              div.style.margin = "auto";
+              // div.style.backgroundColor = "skyblue";
+              div.style.fontSize = "15px";
+              div.style.width = "500px";
+              div.textContent = fruit.title;
+              resultsContainer.appendChild(div);
+              resultsContainer.classList.add("show"); // Show the results container
+            });
+          } else {
+            const p = document.createElement("p");
+            p.textContent = "등록된 사이트가 없습니다.";
+            resultsContainer.appendChild(p);
+            resultsContainer.classList.remove("show"); // Hide the results container
+          }
+        }
+
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", searchFruits);
+
+        function submitSearch() {
+          const searchInput = document.getElementById("searchInput");
+          const searchTerm = searchInput.value.trim().toLowerCase();
+
+          if (searchTerm !== "") {
+            const matchingFruits = fruits.filter((fruit) => {
+              return fruit.title.toLowerCase().includes(searchTerm);
+            });
+
+            if (matchingFruits.length > 0) {
+              const fruitIndex = fruits.indexOf(matchingFruits[0]);
+              const url =
+                "http://127.0.0.1:5501/Capstone/front/html/detail" +
+                fruitIndex +
+                ".html";
+              window.location.href = url;
+            } else {
+              console.log("검색 결과가 없습니다.");
+            }
+          }
+        }
+
+        const searchForm = document.querySelector(".detail-search form");
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          submitSearch();
+        });
+      </script>
     </div>
     <div class="login">
       <a
