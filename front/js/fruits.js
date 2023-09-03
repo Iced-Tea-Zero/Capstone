@@ -69,6 +69,17 @@ const fruits = [
   },
   {
     _id: {
+      $oid: "",
+    },
+    title: "Figma: The Collaborative Interface Design Tool",
+    link: "https://www.figma.com/",
+    detail:
+      "빠르고 쉽게 프로토타이핑하고 실시간으로 피드백 주고 받을 수 있는 툴",
+    number: 80400000,
+    hashtag: "디자인, 제작, UI, 무료, 공유",
+  },
+  {
+    _id: {
       $oid: "6442660ec80f04abafabc7a7",
     },
     title: "Asana를 기존 협업 툴과 함께 사용하는 방법",
@@ -255,6 +266,17 @@ const fruits = [
   },
   {
     _id: {
+      $oid: "",
+    },
+    title: "Zeplin - Bring harmony to design delivery",
+    link: "https://zeplin.io/",
+    detail:
+      "디자인 가이드이 더이상 필요하지 않은 UI 디자이너와 프론트앤드 개발자를 연결시켜주는 툴",
+    number: 998300,
+    hashtag: "디자인, 제작, UI, 무료, 공유",
+  },
+  {
+    _id: {
       $oid: "6442660ec80f04abafabc7bd",
     },
     title: "위키 : 올인원 협업툴 두레이, Let's Dooray",
@@ -346,7 +368,7 @@ const fruits = [
       $oid: "6442660ec80f04abafabc7c7",
     },
     title: "동영상 편집 프로그램 : 뱁믹스2",
-    link: "https://www.vapshion.com/vapshion3/download.php",
+    link: "https://www.vapshion.com/vapshion3/download.phphttps://www.panopto.com/kr/%EA%B8%B0%EB%8A%A5/%EB%B9%84%EB%94%94%EC%98%A4-%EB%85%B9%ED%99%94/%EB%B9%84%EB%94%94%EC%98%A4-%ED%8E%B8%EC%A7%91%EA%B8%B0/",
     detail:
       "뱁믹스2는 고퀄리티 자막 템플릿, 전환효과, 모자이크, 크로마키 등을 제공하는 타임라인 기반의 (4K) 동영상 편집 프로그램입니다.",
     number: 24200,
@@ -373,27 +395,5 @@ const fruits = [
       "엠에디터는 강력한 기능의 매크로, 유니코드, 그리고 대용량 파일을 지원합니다. Emurasoft의 목적은 고객님들의 필요와 요구에 관하여 귀 기울인 후 이를 충족시키는 것입니다.",
     number: 4200,
     hashtag: "프로그램, 다운로드, 영상, 제작, 유료",
-  },
-  {
-    _id: {
-      $oid: "",
-    },
-    title: "Zeplin - Bring harmony to design delivery",
-    link: "https://zeplin.io/",
-    detail:
-      "디자인 가이드이 더이상 필요하지 않은 UI 디자이너와 프론트앤드 개발자를 연결시켜주는 툴",
-    number: 998300,
-    hashtag: "디자인, 제작, UI, 무료, 공유",
-  },
-  {
-    _id: {
-      $oid: "",
-    },
-    title: "Figma: The Collaborative Interface Design Tool",
-    link: "https://www.figma.com/",
-    detail:
-      "빠르고 쉽게 프로토타이핑하고 실시간으로 피드백 주고 받을 수 있는 툴",
-    number: 80400000,
-    hashtag: "디자인, 제작, UI, 무료, 공유",
   },
 ];
