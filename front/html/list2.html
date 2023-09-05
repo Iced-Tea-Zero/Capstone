@@ -51,6 +51,33 @@
 
     <h2></h2>
 
+    <div class="imsi-right">
+      <div class="imsi-right-content-frame">
+        <div class="searched">
+          <table class="searched" style="width: 240px">
+            <tr>
+              <th>이전에 검색했던 페이지</th>
+            </tr>
+            <tr>
+              <td>
+                <script>
+                  const urlParams = new URL(location.href).searchParams;
+
+                  const sitv = urlParams.get('sitv');
+
+                  if(sitv==null)
+                    document.write("-")
+                  else
+                    document.write(sitv)
+                </script>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <br>
+      </div>
+    </div>
+
     <div class="content-box">
       <ul>
         <!-- JSON 데이터를 불러와서 HTML로 변환 -->
