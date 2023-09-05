@@ -5,31 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TOOL TOOLS</title>
-    <link href="../data/style/list.css" rel="stylesheet" />
     <link href="../data/style/list2.css" rel="stylesheet" />
-    <script src="../js/fruits.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    <script src="../js/fruits.js"></script>
     <script src="../js/list.js"></script>
   </head>
+
   <body>
     <div class="header">
       <div class="header-item">
-        <a href="../html/select3.html">
+        <a href="select3.html">
           <img src="../data/img/logo.png" class="logo" />
         </a>
       </div>
 
       <div class="detail-search">
-        <div id="results"></div>
         <form>
           <input
             type="text"
             class="search"
-            id="searchInput"
             placeholder="     어떤 웹 사이트를 찾고 계신가요?🧐"
           />
           <input
@@ -40,122 +38,80 @@
           />
         </form>
       </div>
-      <script>
-        function searchFruits() {
-          const searchInput = document.getElementById("searchInput");
-          const searchTerm = searchInput.value.toLowerCase();
-          const resultsContainer = document.getElementById("results");
-          resultsContainer.innerHTML = "";
-
-          const filteredFruits = fruits.filter((fruit) => {
-            return fruit.title.toLowerCase().includes(searchTerm);
-          });
-
-          if (filteredFruits.length > 0) {
-            filteredFruits.forEach((fruit) => {
-              const div = document.createElement("div");
-              div.style.margin = "auto";
-              // div.style.backgroundColor = "skyblue";
-              div.style.fontSize = "15px";
-              div.style.width = "500px";
-              div.textContent = fruit.title;
-              resultsContainer.appendChild(div);
-              resultsContainer.classList.add("show"); // Show the results container
-            });
-          } else {
-            const p = document.createElement("p");
-            p.textContent = "등록된 사이트가 없습니다.";
-            resultsContainer.appendChild(p);
-            resultsContainer.classList.remove("show"); // Hide the results container
-          }
-        }
-
-        const searchInput = document.getElementById("searchInput");
-        searchInput.addEventListener("input", searchFruits);
-
-        function submitSearch() {
-          const searchInput = document.getElementById("searchInput");
-          const searchTerm = searchInput.value.trim().toLowerCase();
-
-          if (searchTerm !== "") {
-            const matchingFruits = fruits.filter((fruit) => {
-              return fruit.title.toLowerCase().includes(searchTerm);
-            });
-
-            if (matchingFruits.length > 0) {
-              const fruitIndex = fruits.indexOf(matchingFruits[0]);
-              const url =
-                "http://127.0.0.1:5500/front/html/detail" +
-                fruitIndex +
-                ".html";
-              window.location.href = url;
-            } else {
-              console.log("검색 결과가 없습니다.");
-            }
-          }
-        }
-
-        const searchForm = document.querySelector(".detail-search form");
-        searchForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          submitSearch();
-        });
-      </script>
     </div>
 
     <div class="login">
       <a
-        href="../html/login.html"
+        href="./login.html"
         style="color: aliceblue; text-decoration-line: none"
       >
         로그인 <br
       /></a>
-
-
     </div>
-<body>
 
-	<h2></h2>
+    <h2></h2>
 
-	<table>
-		<tr>
-			<th>Title</th>
-			<th>Link</th>
-			<th>Hashtag</th>
-		</tr>
+    <div class="content-box">
+      <ul>
+        <!-- JSON 데이터를 불러와서 HTML로 변환 -->
+        <script>
+          $(document).ready(function () {
+            var filter = localStorage.getItem("filter");
+            var selectedTags = filter.split(", ");
 
-		<!-- JSON 데이터를 불러와서 HTML로 변환 -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-			  var filter = localStorage.getItem("filter"); // 검색어를 localStorage에서 가져옴
-			  var selectedTags = filter.split(", "); // 선택한 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
+            $.getJSON("../data/sitelink.json", function (data) {
+              $("ul").empty(); // 기존 결과 제거
 
-			  $.getJSON("../data/sitelink.json", function(data) {
-				$.each(data, function(key, value) {
-				  var hashtags = value.hashtag.split(", "); // 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
-				  var isMatched = selectedTags.every(function(tag) {
-					return hashtags.includes(tag); // 선택한 모든 해시태그가 항목의 해시태그에 포함되어야 함
-				  });
+              var matchingData = data.filter(function (value) {
+                var hashtags = value.hashtag.split(", ");
+                return selectedTags.every(function (tag) {
+                  return hashtags.includes(tag);
+                });
+              });
 
-				  if (isMatched) {
-					var titleLink = "<a href='detail" + key + ".html'>" + value.title + "</a>";
-					$("table").append("<tr><td>" + titleLink + "</td><td><a href='" + value.link + "'>" + value.link + "</a></td><td>" + value.hashtag + "</td></tr>");
-				  }
-				});
+              if (matchingData.length > 0) {
+                $.each(matchingData, function (key, value) {
+                  var tags = value.hashtag.split(", ");
+                  var tagBlocks = tags
+                    .map(function (tag) {
+                      return "<div class='tag'>" + tag + "</div>";
+                    })
+                    .join("");
 
-				// 선택한 제목 클릭 시 해당 링크로 이동
-				$("table").on("click", "a", function(e) {
-				  e.preventDefault(); // 기본 동작 중단 (페이지 이동 방지)
-				  var link = $(this).attr("href");
-				  window.location.href = link; // 클릭한 링크로 페이지 이동
-				});
-			  });
-			});
-		  </script>
-
-
-	</table>
-
-</body>
+                  var listItem =
+                    "<li><div class='item-number'>" +
+                    (key + 1) +
+                    "</div><strong class='title-text'></strong> <a href='" +
+                    value.con +
+                    "' class='title-text'>" +
+                    value.title +
+                    "</a><br><strong class='link-text'></strong> <a href='" +
+                    value.link +
+                    "' class='link-text'>" +
+                    value.link +
+                    "</a><br><strong></strong> " +
+                    tagBlocks +
+                    "</li>";
+                  $("ul").append(listItem);
+                });
+              } else {
+                // 이미지 추가를 위한 div 및 스타일 설정
+                var noDataContainer = document.createElement("div");
+                noDataContainer.style.display = "flex";
+                noDataContainer.style.justifyContent = "center";
+                noDataContainer.style.alignItems = "center";
+                noDataContainer.style.height = "400px";
+                var img = document.createElement("img");
+                img.src = "../data/img/nodata.jpg";
+                img.alt = "No Data Image";
+                img.style.width = "400px";
+                noDataContainer.appendChild(img);
+                $("ul").append(noDataContainer);
+              }
+            });
+          });
+        </script>
+      </ul>
+    </div>
+  </body>
 </html>
