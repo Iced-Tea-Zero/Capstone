@@ -10,15 +10,14 @@
   <script src="../js/fruits.js"></script>
   <script src="../js/list.js"></script>
 
-
-
-
 </head>
 
 <body>
   <div class="header">
     <div class="header-item">
+      <a href="select3.html">
       <img src="../data/img/logo.png" class="logo" />
+      </a>
     </div>
 
     <div class="detail-search">
@@ -47,52 +46,62 @@
     /></a>
   </div>
 
+
+  
   <h2></h2>
 
-  <table>
-    <tr>
-      <th class="title-col">Title</th>
-      <th class="link-col">Link</th>
-      <th class="hashtag-col">Hashtag</th>
-    </tr>
 
-    <!-- JSON 데이터를 불러와서 HTML로 변환 -->
-    <script>
-      $(document).ready(function() {
-        var filter = localStorage.getItem("filter"); // 검색어를 localStorage에서 가져옴
-        var selectedTags = filter.split(", "); // 선택한 해시태그를 쉼표와 공백으로 분리하여 배열로 만듦
-
-        $.getJSON("../data/sitelink.json", function(data) {
-          $("table").empty(); // 기존 결과 제거
-
-          var matchingData = data.filter(function(value) {
-            var hashtags = value.hashtag.split(", ");
-            return selectedTags.every(function(tag) {
-              return hashtags.includes(tag);
+  
+  <div class="content-box">
+    <ul>
+      <!-- JSON 데이터를 불러와서 HTML로 변환 -->
+      <script>
+        $(document).ready(function() {
+          var filter = localStorage.getItem("filter"); 
+          var selectedTags = filter.split(", "); 
+      
+          $.getJSON("../data/sitelink.json", function(data) {
+            $("ul").empty(); // 기존 결과 제거
+      
+            var matchingData = data.filter(function(value) {
+              var hashtags = value.hashtag.split(", ");
+              return selectedTags.every(function(tag) {
+                return hashtags.includes(tag);
+              });
             });
+      
+            if (matchingData.length > 0) {
+              $.each(matchingData, function(key, value) {
+                var tags = value.hashtag.split(", "); 
+                var tagBlocks = tags.map(function(tag) {
+                  return "<div class='tag'>" + tag + "</div>";
+                }).join(""); 
+      
+                var listItem = "<li><div class='item-number'>" + (key + 1) + "</div><strong class='title-text'></strong> <a href='" + value.con + "' class='title-text'>" + value.title 
+                  + "</a><br><strong class='link-text'></strong> <a href='" + value.link + "' class='link-text'>"
+                     + value.link + "</a><br><strong></strong> " + tagBlocks + "</li>";
+                $("ul").append(listItem);
+              });
+            } else {
+              // 이미지 추가를 위한 div 및 스타일 설정
+              var noDataContainer = document.createElement("div");
+              noDataContainer.style.display = "flex";
+              noDataContainer.style.justifyContent = "center";
+              noDataContainer.style.alignItems = "center";
+              noDataContainer.style.height = "400px"; 
+              var img = document.createElement("img");
+              img.src = "../data/img/nodata.jpg"; 
+              img.alt = "No Data Image";
+              img.style.width = "400px";
+              noDataContainer.appendChild(img);
+              $("ul").append(noDataContainer); 
+            }
           });
-
-          if (matchingData.length > 0) {
-            $.each(matchingData, function(key, value) {
-              var titleLink = "<a href='detail" + key + ".html'>" + value.title + "</a>";
-              $("table").append("<tr><td>" + titleLink + "</td><td><a href='" + value.link + "'>" + value.link + "</a></td><td>" + value.hashtag + "</td></tr>");
-            });
-
-            // 선택한 제목 클릭 시 해당 링크로 이동
-            $("table").on("click", "a", function(e) {
-              e.preventDefault(); // 기본 동작 중단 (페이지 이동 방지)
-              var link = $(this).attr("href");
-              window.location.href = link; // 클릭한 링크로 페이지 이동
-            });
-          } else {
-            var p = document.createElement("p");
-            p.textContent = "검색 결과가 없습니다.";
-            $("table").append(p);
-          }
         });
-      });
-    </script>
-  </table>
-
-</body>
-</html>
+      </script>
+    </ul>
+  </div>
+  
+  
+    </body>
+    </html>
